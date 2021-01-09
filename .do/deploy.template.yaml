@@ -1,0 +1,7 @@
+spec:
+  name: devdadjokes
+  static_sites:
+    - git:
+        branch: main
+        repo_clone_url: https://github.com/digitalocean/devdadjokes.git
+      name: devdadjokes
