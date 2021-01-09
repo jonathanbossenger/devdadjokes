@@ -1,7 +1,12 @@
 spec:
   name: devdadjokes
-  static_sites:
-    - git:
+  services:
+    - environment_slug: php
+      git:
         branch: main
         repo_clone_url: https://github.com/digitalocean/devdadjokes.git
+      envs:
+        - key: APP_KEY
+          value: "base64:sk1l0cWzGfyQ8W01oNBA9KtZMGr0sORyJOBQXor6VTs="
       name: devdadjokes
+      run_command: heroku-php-apache2 public/
