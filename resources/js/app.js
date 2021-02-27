@@ -1,7 +1,7 @@
 require('./bootstrap');
 
 let themeBtn = document.getElementById("theme-btn");
-let shareBtn = document.getElementById("share-btn");
+/*let shareBtn = document.getElementById("share-btn");*/
 let fakeWindow = document.getElementById("window");
 let themeModal = document.getElementById("theme-modal");
 let themeOptions = document.getElementsByClassName("theme-option");
@@ -34,9 +34,10 @@ themeBtn.onclick = () =>{
     else
         openModal();
 };
+/*
 shareBtn.onclick = () =>{
     // TODO: add share functionality
-}
+}*/
 
 function closeModal(){
     themeModal.style.overflow = "hidden";
