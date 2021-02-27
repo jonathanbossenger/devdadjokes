@@ -43,16 +43,38 @@
                         <button id="theme-btn" class="btn mr-5">
                             change theme
                         </button>
-                        <button id="share-btn" class="btn">
+                        {{--<button id="share-btn" class="btn">
                             share
-                        </button>
+                        </button>--}}
                     </div>
                 </div>
             </div>
             <div class="second-col">
                 <div class="site-desc">
                     <h1>DevDadJokes</h1>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ea culpa quas! Officiis rem numquam dolorem iure facere mollitia facilis!
+                    <strong>Credits</strong>
+                    <ol>
+                        <li>
+                            <a href="https://laravel.com/" target="_blank">
+                                Laravel
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Sv443/JokeAPI" target="_blank">
+                                Joke API
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/jonathanbossenger" target="_blank">
+                                Jonathan Bossenger
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/szhabolcs" target="_blank">
+                                Nagy Szabolcs
+                            </a>
+                        </li>
+                    </ol>
                     <div>
                         <div>
                             <img src="img/github-icon.svg" alt="github icon"><a href="https://github.com/jonathanbossenger/devdadjokes" target="_blank" rel="noopener noreferrer">devdadjokes</a>
