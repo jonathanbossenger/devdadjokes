@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+
+/* Layout */
+body{
+  @apply flex flex-row justify-center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg id='Group_6' data-name='Group 6' transform='translate(-513 173)'%3E%3Crect id='Rectangle_16' data-name='Rectangle 16' width='80' height='80' transform='translate(513 -173)' fill='%23212121'/%3E%3Cpath id='code-icon' d='M42.244,68.7H6.964A6.973,6.973,0,0,0,0,75.665V97.737A6.973,6.973,0,0,0,6.964,104.7h35.28a6.973,6.973,0,0,0,6.964-6.965V75.665A6.973,6.973,0,0,0,42.244,68.7ZM17.858,79.78l-7.326,7.326,6.515,6.515a1.441,1.441,0,1,1-2.038,2.038L7.473,88.126a1.441,1.441,0,0,1,0-2.038l8.345-8.345a1.442,1.442,0,1,1,2.039,2.038ZM29.75,76.389,22.126,97.974a1.442,1.442,0,0,1-2.719-.96l7.623-21.585a1.442,1.442,0,0,1,2.719.96ZM41.734,87.315l-8.345,8.345a1.442,1.442,0,1,1-2.039-2.038L38.676,86.3,32.161,79.78A1.441,1.441,0,1,1,34.2,77.742l7.535,7.535a1.441,1.441,0,0,1,0,2.038Z' transform='translate(528 -219.7)' fill='%23262626'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+#main{
+  @apply text-white font-body p-5 w-screen h-full grid grid-cols-1 md:h-screen md:grid-cols-2 md:max-w-7xl;
+}
+.two-col{
+  @apply flex flex-col justify-center items-center;
+}
+.first-col{
+  @apply w-full sm:w-9/12 md:w-4/5;
+}
+.second-col{
+  @apply flex flex-col justify-center items-center;
+}
+.site-desc{
+  @apply bg-blur sm:w-9/12 border p-10;
+}
+.site-desc h1{
+  @apply text-4xl lg:text-5xl xl:text-6xl mb-7;
+}
+.site-desc div:first-of-type{
+  @apply mt-10;
+}
+.site-desc div:first-of-type div:first-of-type{
+  @apply mb-3;
+}
+.site-desc img[alt="dev icon"]{
+  margin-left: 2px;
+}
+.site-desc img{
+  @apply h-10 inline-block mr-3;
+}
+
+/* Miscellaneous */
+.bg-blur{ /* Blurred background fallback for Firefox */
+  background-color: rgba(15, 15, 15, 0.5);  
+}
+@supports ((-webkit-backdrop-filter: blur(3px)) or (backdrop-filter: blur(3px))){
+  .bg-blur{
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    background-color: rgba(255, 255, 255, 0.02);  
+  }
+}
+.btn{
+  @apply bg-black-400 px-9 py-2 border transition-colors hover:bg-black-900;
+}
+.btn-wrapper{
+  @apply flex mt-5 mb-10 md:mb-0;
+}
+#theme-modal{
+  @apply absolute left-0 bottom-0 w-full bg-black-700 border overflow-hidden max-h-0 opacity-0 pointer-events-none;
+  transition: max-height 0.3s;
+}
+#theme-modal div{
+  @apply break-all p-4 hover:bg-black-900 cursor-pointer;
+}
+
+/* Modal animation */
+.modal-open{
+  max-height: var(--modal-max-height) !important;
+  pointer-events: auto !important;
+}
+
+/* Theme switching animation */
+@keyframes fadeOut{
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to{
+    opacity: 1;
+  }
+}
+.fade-in{
+  animation: fadeIn 0.3s;
+}
+.fade-out{
+  animation: fadeOut 0.3s;
+}
+
+/* Basic window styles */
+#window{
+  @apply bg-blur min-h-64 relative;
+}
+#wd-title{
+  @apply flex items-center;
+  height: 38px;
+}
+#wd-app-name{
+  @apply flex items-center;
+}
+#wd-icon{
+  @apply mx-1.5;
+}
+#wd-app-name span{
+  @apply mx-1.5;
+}
+#wd-buttons{
+  @apply flex;
+}
+#wd-content{
+  @apply border border-t-0 min-h-64 py-10 px-12;
+}
+#wd-setup{
+  @apply text-2xl inline-block;
+}
+#wd-delivery{
+  @apply text-xl inline-block mt-3 mb-12;
+}
+#wd-tags{
+  @apply flex flex-row flex-wrap;
+}
+#wd-tags span:nth-child(1){
+  @apply py-2 px-3 bg-black-600;
+}
+#wd-tags span:nth-child(2){
+  @apply py-2 px-3 bg-white text-black-900;
+}
+
+/* Windows theme */
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+.win-theme #wd-title{
+  @apply bg-white text-black-900 pl-1.5;
+  font-family: 'Oxygen', sans-serif;
+}
+.win-theme #wd-title #wd-app-name #wd-icon{
+  content:url("themes/win/app-icon.svg");
+  height: 17px;
+  width: 17px;
+}
+.win-theme #wd-app-name span{
+  transform: translateY(0.7px); /* This is just because the font has weird default line-height */
+}
+.win-theme #wd-title #wd-buttons{
+  @apply ml-auto;
+}
+.win-theme #wd-title #wd-buttons img:nth-child(1){
+  content:url("themes/win/minimize-icon.svg");
+}
+.win-theme #wd-title #wd-buttons img:nth-child(2){
+  content:url("themes/win/maximize-icon.svg");
+}
+.win-theme #wd-title #wd-buttons img:nth-child(3){
+  content:url("themes/win/close-icon.svg");
+}
+
+/* macOS theme */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+.mac-theme {
+  @apply rounded-xl;
+}
+.mac-theme #wd-title{
+  @apply bg-white text-black-900 flex-row-reverse px-3.5 rounded-t-xl relative;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+.mac-theme #wd-title #wd-app-name{
+  @apply absolute left-1/2 transform -translate-x-1/2;
+}
+.mac-theme #wd-title #wd-app-name #wd-icon{
+  content:url("themes/mac/app-icon.svg");
+  height: 17px;
+  width: 17px;
+}
+.mac-theme #wd-app-name span{
+  transform: translateY(0.7px); /* This is just because the font has weird default line-height */
+}
+.mac-theme #wd-title #wd-buttons{
+  @apply mr-auto;
+}
+.mac-theme #wd-title #wd-buttons{
+  @apply flex-row-reverse;
+}
+.mac-theme #wd-title #wd-buttons img:nth-child(1){
+  content:url("themes/mac/minimize-icon.svg");
+}
+.mac-theme #wd-title #wd-buttons img:nth-child(2){
+  content:url("themes/mac/maximize-icon.svg");
+}
+.mac-theme #wd-title #wd-buttons img:nth-child(3){
+  content:url("themes/mac/close-icon.svg");
+}
+.mac-theme #wd-content{
+  @apply rounded-b-xl;
+}
+
+/* Ubuntu theme */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+.ubuntu-theme {
+  @apply rounded-xl;
+}
+.ubuntu-theme #wd-title{
+  @apply flex-row px-3.5 rounded-t-xl relative;
+  background-color: #44433F;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+}
+.ubuntu-theme #wd-title #wd-app-name{
+  @apply absolute left-1/2 transform -translate-x-1/2;
+}
+.ubuntu-theme #wd-title #wd-app-name #wd-icon{
+  @apply hidden;
+}
+.ubuntu-theme #wd-app-name span{
+  transform: translateY(0.7px); /* This is just because the font has weird default line-height */
+}
+.ubuntu-theme #wd-title #wd-buttons{
+  @apply ml-auto;
+}
+.ubuntu-theme #wd-title #wd-buttons img:nth-child(1){
+  content:url("themes/ubuntu/minimize-icon.svg");
+}
+.ubuntu-theme #wd-title #wd-buttons img:nth-child(2){
+  content:url("themes/ubuntu/maximize-icon.svg");
+}
+.ubuntu-theme #wd-title #wd-buttons img:nth-child(3){
+  content:url("themes/ubuntu/close-icon.svg");
+}
+.ubuntu-theme #wd-content{
+  @apply rounded-b-xl;
+  border-color: #44433F;
+}
+
+@tailwind utilities;

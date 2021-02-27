@@ -9,4 +9,5 @@ spec:
         - key: APP_KEY
           value: "base64:sk1l0cWzGfyQ8W01oNBA9KtZMGr0sORyJOBQXor6VTs="
       name: devdadjokes
+      build_command: composer install && npm install && npm run prod
       run_command: heroku-php-apache2 public/

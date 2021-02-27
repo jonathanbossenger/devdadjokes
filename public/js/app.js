@@ -1842,6 +1842,57 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+var themeBtn = document.getElementById("theme-btn");
+var shareBtn = document.getElementById("share-btn");
+var fakeWindow = document.getElementById("window");
+var themeModal = document.getElementById("theme-modal");
+var themeOptions = document.getElementsByClassName("theme-option"); //Set modal height accordingly
+
+themeModal.style.setProperty('--modal-max-height', "".concat(themeModal.scrollHeight > fakeWindow.scrollHeight ? fakeWindow.scrollHeight : themeModal.scrollHeight + 5, "px")); //Add event listeners
+
+for (var i = 0; i < themeOptions.length; i++) {
+  themeOptions[i].addEventListener('click', changeTheme, false);
+}
+
+function changeTheme() {
+  var themeName = this.getAttribute("id");
+  closeModal();
+  setTimeout(function () {
+    return fakeWindow.classList.add("fade-out");
+  }, 300);
+  setTimeout(function () {
+    fakeWindow.className = '';
+    fakeWindow.className = "".concat(themeName, "-theme");
+    fakeWindow.classList.remove("fade-out");
+    fakeWindow.classList.add("fade-in");
+  }, 500);
+}
+
+;
+
+themeBtn.onclick = function () {
+  if (themeModal.classList.contains("modal-open")) closeModal();else openModal();
+};
+
+shareBtn.onclick = function () {// TODO: add share functionality
+};
+
+function closeModal() {
+  themeModal.style.overflow = "hidden";
+  themeModal.classList.remove("modal-open");
+  setTimeout(function () {
+    return themeModal.style.opacity = "0";
+  }, 300);
+}
+
+function openModal() {
+  themeModal.style.opacity = "1";
+  themeModal.classList.add("modal-open");
+  setTimeout(function () {
+    return themeModal.style.overflow = "auto";
+  }, 300);
+}
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
