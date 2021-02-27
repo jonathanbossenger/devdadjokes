@@ -39,7 +39,7 @@
                             <div class="theme-option" id="ubuntu">Ubuntu</div>
                         </div>
                     </div>
-                    <div class="btn-wrapper">    
+                    <div class="btn-wrapper">
                         <button id="theme-btn" class="btn mr-5">
                             change theme
                         </button>
@@ -64,5 +64,6 @@
                 </div>
             </div>
         </div>
+        <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
