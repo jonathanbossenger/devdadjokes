@@ -24,6 +24,9 @@ body{
 .site-desc h1{
   @apply text-4xl lg:text-5xl xl:text-6xl mb-7;
 }
+.site-desc h2{
+    @apply text-2xl lg:text-2xl xl:text-2xl mb-0.5 mt-2;
+}
 .site-desc div:first-of-type{
   @apply mt-10;
 }
@@ -39,13 +42,13 @@ body{
 
 /* Miscellaneous */
 .bg-blur{ /* Blurred background fallback for Firefox */
-  background-color: rgba(15, 15, 15, 0.5);  
+  background-color: rgba(15, 15, 15, 0.5);
 }
 @supports ((-webkit-backdrop-filter: blur(3px)) or (backdrop-filter: blur(3px))){
   .bg-blur{
     backdrop-filter: blur(3px);
     -webkit-backdrop-filter: blur(3px);
-    background-color: rgba(255, 255, 255, 0.02);  
+    background-color: rgba(255, 255, 255, 0.02);
   }
 }
 .btn{
