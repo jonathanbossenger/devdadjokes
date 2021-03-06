@@ -43,6 +43,9 @@
                         <button id="theme-btn" class="btn mr-5">
                             change theme
                         </button>
+                        {{--<button id="submit-btn" class="btn mr-5">
+                            submit joke
+                        </button>--}}
                         {{--<button id="share-btn" class="btn">
                             share
                         </button>--}}
@@ -52,18 +55,8 @@
             <div class="second-col">
                 <div class="site-desc">
                     <h1>DevDadJokes</h1>
-                    <strong>Credits</strong>
+                    <h2>Credits</h2>
                     <ol>
-                        <li>
-                            <a href="https://laravel.com/" target="_blank">
-                                Laravel
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/Sv443/JokeAPI" target="_blank">
-                                Joke API
-                            </a>
-                        </li>
                         <li>
                             <a href="https://github.com/jonathanbossenger" target="_blank">
                                 Jonathan Bossenger
@@ -72,6 +65,24 @@
                         <li>
                             <a href="https://github.com/szhabolcs" target="_blank">
                                 Nagy Szabolcs
+                            </a>
+                        </li>
+                    </ol>
+                    <h2>Built with</h2>
+                    <ol>
+                        <li>
+                            <a href="https://laravel.com/" target="_blank">
+                                Laravel
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://tailwindcss.com/" target="_blank">
+                                TailwindCSS
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/Sv443/JokeAPI" target="_blank">
+                                Joke API
                             </a>
                         </li>
                     </ol>
