@@ -11,4 +11,5 @@ spec:
         - key: APP_URL
           value: "https://devdadjokes.net"
       name: devdadjokes
-      run_command: heroku-php-apache2 public/ && npm run prod
+      build_command: npm run prod
+      run_command: heroku-php-apache2 public/
