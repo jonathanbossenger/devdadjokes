@@ -4,39 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Models\Joke;
 use Illuminate\Http\Request;
-use GuzzleHttp\Client;
+use App\Http\Services\JokeService;
 
 class JokeController extends Controller
 {
-    protected $guzzleClient;
-    protected $jokeApiRequest;
+    protected $jokeService;
 
-    public function __construct(Client $guzzleClient)
+    public function __construct(JokeService $jokeService)
     {
-        $this->guzzleClient = $guzzleClient;
-        $this->jokeApiRequest = 'https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=twopart';
+        $this->jokeService = $jokeService;
     }
 
     /**
-     * Display a listing of the resource.
+     * Display a joke.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $response = $this->guzzleClient->get($this->jokeApiRequest);
-        $jokeArray = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
-
-        if (isset($jokeArray['error']) && $jokeArray['error'] !== true) {
-            $joke = Joke::firstOrCreate([
-                'joke_id' => $jokeArray['id'],
-                'setup' => $jokeArray['setup'],
-                'delivery' => $jokeArray['delivery'],
-            ]);
-            $viewData = compact('jokeArray');
-        } else {
-            $viewData = ['jokeArray' => false];
-        }
+        $viewData = $this->jokeService->fetchJoke();
         return view('home', $viewData);
     }
 
