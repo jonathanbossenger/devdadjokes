@@ -56,6 +56,8 @@ return [
 
     'asset_url' => env('ASSET_URL', null),
 
+    'joke_api' => env('JOKE_API', null),
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
