@@ -13,10 +13,10 @@
                     <div id="window" class="win-theme">
                         <div id="wd-title">
                             <div id="wd-app-name">
-                                <img id="wd-icon" alt="app icon">
+                                <img class="wd-icon" id="wd-icon" alt="app icon">
                                 <span>DevDadJokes</span>
                             </div>
-                            <div id="wd-buttons">
+                            <div class="wd-buttons" id="wd-buttons">
                                 <img alt="minimize-icon">
                                 <img alt="maximize-icon">
                                 <img alt="close-icon">
@@ -46,14 +46,14 @@
                         {{--<button id="submit-btn" class="btn mr-5">
                             submit joke
                         </button>--}}
-                        {{--<button id="share-btn" class="btn">
+                        <button id="share-btn" class="btn">
                             share
-                        </button>--}}
+                        </button>
                     </div>
                 </div>
             </div>
             <div class="second-col">
-                <div class="site-desc">
+                <div id="site-desc" class="site-desc">
                     <h1>DevDadJokes</h1>
                     <h2>Credits</h2>
                     <ol>

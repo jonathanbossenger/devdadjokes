@@ -1,7 +1,9 @@
 require('./bootstrap');
 
+let domToImage = require('dom-to-image');
+
 let themeBtn = document.getElementById("theme-btn");
-/*let shareBtn = document.getElementById("share-btn");*/
+let shareBtn = document.getElementById("share-btn");
 let fakeWindow = document.getElementById("window");
 let themeModal = document.getElementById("theme-modal");
 let themeOptions = document.getElementsByClassName("theme-option");
@@ -34,10 +36,24 @@ themeBtn.onclick = () =>{
     else
         openModal();
 };
-/*
+
 shareBtn.onclick = () =>{
     // TODO: add share functionality
-}*/
+    let node = document.getElementById('window');
+
+    /*let buttons = node.getElementsByClassName('wd-buttons');
+    buttons[0].parentElement.removeChild(buttons[0]);
+    let icon = node.getElementsByClassName('wd-icon')
+    icon[0].parentElement.removeChild(icon[0]);*/
+
+    domToImage.toJpeg(node, { quality: 0.95 })
+        .then(function (dataUrl) {
+            let link = document.createElement('a');
+            link.download = 'DevDadJokes.jpeg';
+            link.href = dataUrl;
+            link.click();
+        });
+}
 
 function closeModal(){
     themeModal.style.overflow = "hidden";
