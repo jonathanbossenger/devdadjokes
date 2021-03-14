@@ -25,8 +25,8 @@ function changeTheme() {
     setTimeout(() => {
         fakeWindow.className = '';
         fakeWindow.className = `${themeName}-theme`;
-        updateIcons(themeName);
         fakeWindow.classList.remove("fade-out");
+        updateIcons(themeName);
         fakeWindow.classList.add("fade-in");
     }, 500);
 };
