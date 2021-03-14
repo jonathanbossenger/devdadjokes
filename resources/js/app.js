@@ -42,6 +42,15 @@ function updateIcons(themeName) {
     wdClose.setAttribute('src', `css/themes/${themeName}/close-icon.png`);
 }
 
+function openTwitterUrl(twitterUrl) {
+    const width = 575
+    const height = 400
+    const left = (window.outerWidth - width) / 2
+    const top = (window.outerHeight - height) / 2
+    const opts = `status=1,width=${width},height=${height},top=${top},left=${left}`
+    window.open(twitterUrl, '_blank', opts)
+}
+
 themeBtn.onclick = () =>{
     if(themeModal.classList.contains("modal-open"))
         closeModal();
@@ -51,6 +60,10 @@ themeBtn.onclick = () =>{
 
 shareBtn.onclick = () =>{
     alert('Sharing to Twitter - Coming Soon!');
+    //https://developer.twitter.com/en/docs/twitter-api/v1/media/upload-media/api-reference/post-media-upload
+    // returns {media_id} eg NNV4MFHjTC
+    // window.open() ->
+    //https://twitter.com/intent/tweet?text=%23DevDadJokes%20pic.twitter.com%2FNNV4MFHjTC{media_id}
 }
 
 exportBtn.onclick = () =>{
