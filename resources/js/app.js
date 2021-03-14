@@ -50,7 +50,7 @@ themeBtn.onclick = () =>{
 };
 
 shareBtn.onclick = () =>{
-    alert('Node to jpeg and share to Twitter');
+    alert('Sharing to Twitter - Coming Soon!');
 }
 
 exportBtn.onclick = () =>{

@@ -143,7 +143,6 @@ body{
   font-family: 'Oxygen', sans-serif;
 }
 .win-theme #wd-title #wd-app-name #wd-icon{
-  /*content:url("themes/win/app-icon.png");*/
   height: 17px;
   width: 17px;
 }
@@ -153,15 +152,6 @@ body{
 .win-theme #wd-title #wd-buttons{
   @apply ml-auto;
 }
-/*.win-theme #wd-title #wd-buttons img:nth-child(1){
-  content:url("themes/win/minimize-icon.png");
-}
-.win-theme #wd-title #wd-buttons img:nth-child(2){
-  content:url("themes/win/maximize-icon.png");
-}
-.win-theme #wd-title #wd-buttons img:nth-child(3){
-  content:url("themes/win/close-icon.png");
-}*/
 
 /* macOS theme */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
@@ -177,7 +167,6 @@ body{
   @apply absolute left-1/2 transform -translate-x-1/2;
 }
 .mac-theme #wd-title #wd-app-name #wd-icon{
-  /*content:url("themes/mac/app-icon.svg");*/
   height: 17px;
   width: 17px;
 }
@@ -190,17 +179,6 @@ body{
 .mac-theme #wd-title #wd-buttons{
   @apply flex-row-reverse;
 }
-/*
-.mac-theme #wd-title #wd-buttons img:nth-child(1){
-  content:url("themes/mac/minimize-icon.svg");
-}
-.mac-theme #wd-title #wd-buttons img:nth-child(2){
-  content:url("themes/mac/maximize-icon.svg");
-}
-.mac-theme #wd-title #wd-buttons img:nth-child(3){
-  content:url("themes/mac/close-icon.svg");
-}
-*/
 .mac-theme #wd-content{
   @apply rounded-b-xl;
 }
@@ -228,15 +206,6 @@ body{
 .ubuntu-theme #wd-title #wd-buttons{
   @apply ml-auto;
 }
-/*.ubuntu-theme #wd-title #wd-buttons img:nth-child(1){
-  content:url("themes/ubuntu/minimize-icon.svg");
-}
-.ubuntu-theme #wd-title #wd-buttons img:nth-child(2){
-  content:url("themes/ubuntu/maximize-icon.svg");
-}
-.ubuntu-theme #wd-title #wd-buttons img:nth-child(3){
-  content:url("themes/ubuntu/close-icon.svg");
-}*/
 .ubuntu-theme #wd-content{
   @apply rounded-b-xl;
   border-color: #44433F;
