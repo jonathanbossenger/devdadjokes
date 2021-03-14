@@ -13,13 +13,13 @@
                     <div id="window" class="win-theme">
                         <div id="wd-title">
                             <div id="wd-app-name">
-                                <img class="wd-icon" id="wd-icon" alt="app icon">
+                                <img class="wd-icon" id="wd-icon" src="css/themes/win/app-icon.png">
                                 <span>DevDadJokes</span>
                             </div>
                             <div class="wd-buttons" id="wd-buttons">
-                                <img alt="minimize-icon">
-                                <img alt="maximize-icon">
-                                <img alt="close-icon">
+                                <img id="wd-min" src="css/themes/win/minimize-icon.png">
+                                <img id="wd-max" src="css/themes/win/maximize-icon.png">
+                                <img id="wd-close" src="css/themes/win/close-icon.png">
                             </div>
                         </div>
                         <div id="wd-content">

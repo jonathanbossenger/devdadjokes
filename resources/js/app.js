@@ -25,6 +25,15 @@ function changeTheme() {
         fakeWindow.className = '';
         fakeWindow.className = `${themeName}-theme`;
 
+        let wdIcon = document.getElementById("wd-icon");
+        wdIcon.setAttribute('src', `css/themes/${themeName}/app-icon.png`);
+        let wdMin = document.getElementById("wd-min");
+        wdMin.setAttribute('src', `css/themes/${themeName}/minimize-icon.png`);
+        let wdMax = document.getElementById("wd-max");
+        wdMax.setAttribute('src', `css/themes/${themeName}/maximize-icon.png`);
+        let wdClose = document.getElementById("wd-close");
+        wdClose.setAttribute('src', `css/themes/${themeName}/close-icon.png`);
+
         fakeWindow.classList.remove("fade-out");
         fakeWindow.classList.add("fade-in");
     }, 500);
