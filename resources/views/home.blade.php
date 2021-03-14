@@ -13,13 +13,13 @@
                     <div id="window" class="win-theme">
                         <div id="wd-title">
                             <div id="wd-app-name">
-                                <img id="wd-icon" alt="app icon">
+                                <img class="wd-icon" id="wd-icon" src="css/themes/win/app-icon.png">
                                 <span>DevDadJokes</span>
                             </div>
-                            <div id="wd-buttons">
-                                <img alt="minimize-icon">
-                                <img alt="maximize-icon">
-                                <img alt="close-icon">
+                            <div class="wd-buttons" id="wd-buttons">
+                                <img id="wd-min" src="css/themes/win/minimize-icon.png">
+                                <img id="wd-max" src="css/themes/win/maximize-icon.png">
+                                <img id="wd-close" src="css/themes/win/close-icon.png">
                             </div>
                         </div>
                         <div id="wd-content">
@@ -46,14 +46,17 @@
                         {{--<button id="submit-btn" class="btn mr-5">
                             submit joke
                         </button>--}}
-                        {{--<button id="share-btn" class="btn">
+                        <button id="export-btn" class="btn">
+                            export
+                        </button>
+                        <button id="share-btn" class="btn">
                             share
-                        </button>--}}
+                        </button>
                     </div>
                 </div>
             </div>
             <div class="second-col">
-                <div class="site-desc">
+                <div id="site-desc" class="site-desc">
                     <h1>DevDadJokes</h1>
                     <h2>Credits</h2>
                     <ol>

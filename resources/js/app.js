@@ -1,7 +1,10 @@
 require('./bootstrap');
 
+let domToImage = require('dom-to-image');
+
 let themeBtn = document.getElementById("theme-btn");
-/*let shareBtn = document.getElementById("share-btn");*/
+let exportBtn = document.getElementById("export-btn");
+let shareBtn = document.getElementById("share-btn");
 let fakeWindow = document.getElementById("window");
 let themeModal = document.getElementById("theme-modal");
 let themeOptions = document.getElementsByClassName("theme-option");
@@ -22,11 +25,22 @@ function changeTheme() {
     setTimeout(() => {
         fakeWindow.className = '';
         fakeWindow.className = `${themeName}-theme`;
-
+        updateIcons(themeName);
         fakeWindow.classList.remove("fade-out");
         fakeWindow.classList.add("fade-in");
     }, 500);
 };
+
+function updateIcons(themeName) {
+    let wdIcon = document.getElementById("wd-icon");
+    wdIcon.setAttribute('src', `css/themes/${themeName}/app-icon.png`);
+    let wdMin = document.getElementById("wd-min");
+    wdMin.setAttribute('src', `css/themes/${themeName}/minimize-icon.png`);
+    let wdMax = document.getElementById("wd-max");
+    wdMax.setAttribute('src', `css/themes/${themeName}/maximize-icon.png`);
+    let wdClose = document.getElementById("wd-close");
+    wdClose.setAttribute('src', `css/themes/${themeName}/close-icon.png`);
+}
 
 themeBtn.onclick = () =>{
     if(themeModal.classList.contains("modal-open"))
@@ -34,10 +48,21 @@ themeBtn.onclick = () =>{
     else
         openModal();
 };
-/*
+
 shareBtn.onclick = () =>{
-    // TODO: add share functionality
-}*/
+    alert('Sharing to Twitter - Coming Soon!');
+}
+
+exportBtn.onclick = () =>{
+    let node = document.getElementById('window');
+    domToImage.toJpeg(node, { quality: 0.95 })
+        .then(function (dataUrl) {
+            let link = document.createElement('a');
+            link.download = 'DevDadJokes.jpeg';
+            link.href = dataUrl;
+            link.click();
+        });
+}
 
 function closeModal(){
     themeModal.style.overflow = "hidden";
