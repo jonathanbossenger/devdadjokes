@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="1000" viewBox="0 0 1000 1000">
+  <defs>
+    <clipPath id="clip-devdadjokes_logo_black">
+      <rect width="1000" height="1000"/>
+    </clipPath>
+  </defs>
+  <g id="devdadjokes_logo_black" data-name="devdadjokes logo – black" clip-path="url(#clip-devdadjokes_logo_black)">
+    <rect width="1000" height="1000" fill="#fff"/>
+    <rect id="Rectangle_32" data-name="Rectangle 32" width="1000" height="1000" fill="#212121"/>
+    <g id="Logo" transform="translate(115 273)">
+      <text id="_" data-name="{" transform="translate(0 295)" fill="#fff" font-size="261" font-family="Consolas"><tspan x="0" y="0">{</tspan></text>
+      <text id="_2" data-name="}" transform="translate(628 295)" fill="#fff" font-size="261" font-family="Consolas"><tspan x="0" y="0">}</tspan></text>
+      <text id="Dev" transform="translate(144 267)" fill="#fff" font-size="290" font-family="Consolas"><tspan x="0" y="0">Dev</tspan></text>
+      <text id="Dad_Jokes" data-name="Dad Jokes" transform="translate(162 369)" fill="#fff" font-size="96" font-family="Consolas" letter-spacing="-0.025em"><tspan x="0" y="0">Dad</tspan><tspan y="0" font-size="65"> </tspan><tspan y="0">Jokes</tspan></text>
+    </g>
+  </g>
+</svg>
