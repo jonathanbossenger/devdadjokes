@@ -10,5 +10,8 @@ spec:
           value: "base64:sk1l0cWzGfyQ8W01oNBA9KtZMGr0sORyJOBQXor6VTs="
         - key: APP_URL
           value: "https://devdadjokes.net"
+        - key: JOKE_API
+          value: "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=twopart"
       name: devdadjokes
-      run_command: heroku-php-apache2 public/ && npm run prod
+      build_command: php artisan migrate && npm run prod
+      run_command: heroku-php-apache2 public/

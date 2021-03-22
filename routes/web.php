@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JokeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,15 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $jokeApiRequest = 'https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=twopart';
-    $client = new GuzzleHttp\Client();
-    $response = $client->get($jokeApiRequest);
-    $joke = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
-    if (isset($joke['error']) && $joke['error'] !== true) {
-        $viewData = compact('joke');
-    } else {
-        $viewData = ['joke' => false];
-    }
-    return view('home', $viewData);
-});
+Route::get('/', [JokeController::class, 'index']);
