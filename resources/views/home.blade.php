@@ -46,7 +46,7 @@
                         {{--<button id="submit-btn" class="btn mr-5">
                             submit joke
                         </button>--}}
-                        <button id="export-btn" class="btn">
+                        <button id="export-btn" class="btn mr-5">
                             export
                         </button>
                         <button id="share-btn" class="btn">
