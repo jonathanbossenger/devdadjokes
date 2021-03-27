@@ -1,13 +1,18 @@
 require('./bootstrap');
+const axios = require('axios');
 
 let domToImage = require('dom-to-image');
 
 let themeBtn = document.getElementById("theme-btn");
+let refreshBtn = document.getElementById("refresh-btn");
 let exportBtn = document.getElementById("export-btn");
 let shareBtn = document.getElementById("share-btn");
 let fakeWindow = document.getElementById("window");
 let themeModal = document.getElementById("theme-modal");
 let themeOptions = document.getElementsByClassName("theme-option");
+
+let wdSetup = document.getElementById("wd-setup");
+let wdDelivery = document.getElementById("wd-delivery");
 
 //Set modal height accordingly
 themeModal.style.setProperty('--modal-max-height', `${themeModal.scrollHeight > fakeWindow.scrollHeight ? fakeWindow.scrollHeight : themeModal.scrollHeight+5}px`);
@@ -61,6 +66,25 @@ exportBtn.onclick = () =>{
             link.download = 'DevDadJokes.jpeg';
             link.href = dataUrl;
             link.click();
+        });
+}
+
+refreshBtn.onclick = () => {
+    wdSetup.innerHTML = "Please stand by...";
+    wdDelivery.innerHTML = "...generating new humour.";
+    axios.get('/api/joke')
+        .then(function (response) {
+            // handle success
+            wdSetup.innerHTML = response.data.setup;
+            wdDelivery.innerHTML = response.data.delivery;
+        })
+        .catch(function (error) {
+            // handle error
+            wdSetup.innerHTML = "Whoops! Well this is embarrassing!";
+            wdDelivery.innerHTML = "Looks like something went wrong, please try again.";
+        })
+        .then(function () {
+            // always executed
         });
 }
 

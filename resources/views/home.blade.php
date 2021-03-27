@@ -27,7 +27,7 @@
                                 <span id="wd-setup">{{$joke['setup']}}</span>
                                 <span id="wd-delivery">{{$joke['delivery']}}</span>
                             @else
-                                <span id="wd-setup">Whoops, looks like the API has hit it's limit, please try again later!</span>
+                                <span id="wd-whoops">Whoops, looks like the API has hit it's limit, please try again later!</span>
                             @endif
                             <span id="wd-tags">
                                 <span>#DevDadJokes</span><span>devdadjokes.net</span>
@@ -43,9 +43,11 @@
                         <button id="theme-btn" class="btn mr-5">
                             change theme
                         </button>
-                        {{--<button id="submit-btn" class="btn mr-5">
-                            submit joke
-                        </button>--}}
+                        <button id="refresh-btn" class="btn">
+                            new joke
+                        </button>
+                    </div>
+                    <div class="btn-wrapper">
                         <button id="export-btn" class="btn mr-5">
                             export
                         </button>
