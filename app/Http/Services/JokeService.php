@@ -16,21 +16,19 @@ class JokeService
         $this->jokeApi = config('app.joke_api');
     }
 
-    public function fetchJoke(){
-
+    public function fetchJoke(): array
+    {
         $response = $this->guzzleClient->get($this->jokeApi);
         $joke = json_decode($response->getBody(), true, 512, JSON_THROW_ON_ERROR);
-
-        if (isset($joke['error']) && $joke['error'] !== true) {
-            Joke::firstOrCreate([
-                'joke_id' => $joke['id'],
-                'setup' => $joke['setup'],
-                'delivery' => $joke['delivery'],
-            ]);
-            return compact('joke');
+        if (isset($joke['error']) && $joke['error'] === true) {
+            return [];
         }
-
-        return ['joke' => false];
+        Joke::firstOrCreate([
+            'joke_id' => $joke['id'],
+            'setup' => $joke['setup'],
+            'delivery' => $joke['delivery'],
+        ]);
+        return $joke;
     }
 
 }
