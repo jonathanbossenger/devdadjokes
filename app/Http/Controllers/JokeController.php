@@ -22,8 +22,22 @@ class JokeController extends Controller
      */
     public function index()
     {
-        $viewData = $this->jokeService->fetchJoke();
-        return view('home', $viewData);
+        $joke = $this->jokeService->fetchJoke();
+        if (empty($joke)) {
+            $joke = Joke::inRandomOrder()->first();
+        }
+        return view('home', compact('joke'));
+    }
+
+    /**
+     * Return a joke for the API
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function apiIndex()
+    {
+        $joke = $this->jokeService->fetchJoke();
+        return response()->json($joke, 200);
     }
 
     /**
