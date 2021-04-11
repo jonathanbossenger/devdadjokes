@@ -60,10 +60,10 @@ shareBtn.onclick = () =>{
 
 exportBtn.onclick = () =>{
     let node = document.getElementById('window');
-    domToImage.toJpeg(node, { quality: 0.95 })
+    domToImage.toPng(node, { quality: 0.95 })
         .then(function (dataUrl) {
             let link = document.createElement('a');
-            link.download = 'DevDadJokes.jpeg';
+            link.download = 'DevDadJokes.png';
             link.href = dataUrl;
             link.click();
         });

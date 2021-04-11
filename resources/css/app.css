@@ -100,7 +100,8 @@ body{
 
 /* Basic window styles */
 #window{
-  @apply bg-blur min-h-64 relative;
+  @apply min-h-64 relative;
+  background-color: #171717;
 }
 #wd-title{
   @apply flex items-center;
